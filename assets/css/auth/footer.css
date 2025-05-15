@@ -1,0 +1,122 @@
+/* ===== VARIÁVEIS ===== */
+:root {
+  --header-color: #ffb6c1; /* Cor igual ao header */
+  --text-color: #56091f; /* Cor do texto escuro */
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+/* ===== FOOTER SIMPLIFICADO ===== */
+.footer {
+  background-color: var(--header-color);
+  color: var(--text-color);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Redes Sociais com Material Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(86, 9, 31, 0.1);
+  color: var(--text-color);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background-color: var(--text-color);
+  color: var(--header-color);
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links úteis */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.footer-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  padding: 0.25rem 0.5rem;
+}
+
+.footer-link:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+/* Copyright */
+.copyright {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}
+
+.copyright p {
+  margin: 0.25rem 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem 0;
+  }
+  
+  .footer-links {
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .social-icon {
+    font-size: 18px;
+  }
+}

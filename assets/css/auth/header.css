@@ -1,0 +1,205 @@
+/* ===== VARIÁVEIS ===== */
+:root {
+    --primary-color: #ff6b8b;
+    --secondary-color: #ffb6c1;
+    --dark-color: #56091f;
+    --light-color: #fff9ed;
+    --accent-color: #ff8c8c;
+    --text-color: #4b0b0b;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 10px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+}
+
+/* ===== ESTILOS GERAIS DO HEADER ===== */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    color: #ffb6c1;
+}
+
+/* ===== LOGO ===== */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.primeira-logo {
+    height: 70px;
+    transition: var(--transition);
+}
+
+.segunda-logo {
+    height: 60px;
+    transition: var(--transition);
+}
+
+.primeira-logo:hover,
+.segunda-logo:hover {
+    transform: scale(1.05);
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    color: var(--dark-color);
+}
+
+/* ===== NAVEGAÇÃO PRINCIPAL ===== */
+#mainNav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.menu-list li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: var(--transition);
+    text-decoration: none;
+    position: relative;
+}
+
+.menu-list li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.menu-list li a:hover::after {
+    width: 70%;
+}
+
+.sem-sublinhado::after {
+    display: none !important;
+}
+
+/* ===== CARRINHO ===== */
+.carrinho-container {
+    margin-left: 1rem;
+}
+
+.imagem-pequena {
+    width: 32px;
+    height: 32px;
+    transition: var(--transition);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.imagem-pequena:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* ===== TOLDO ===== */
+.toldo {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.toldo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #mainNav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        z-index: 1001;
+    }
+
+    #mainNav.active {
+        left: 0;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .menu-list li {
+        width: 100%;
+    }
+
+    .menu-list li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid var(--light-color);
+    }
+
+    .carrinho-container {
+        margin: 2rem 0 0;
+        padding-top: 1rem;
+        border-top: 1px solid var(--light-color);
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    .primeira-logo {
+        height: 60px;
+    }
+
+    .segunda-logo {
+        height: 50px;
+    }
+}
